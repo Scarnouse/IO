@@ -33,7 +33,5 @@ public class FiltradoArchivos {
 			System.out.println("No es un directorio");
 		}
 	}
-	
-	
 
 }

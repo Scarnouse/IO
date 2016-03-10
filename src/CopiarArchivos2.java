@@ -1,4 +1,5 @@
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,7 +16,7 @@ public class CopiarArchivos2 {
 		}
 		// Fichero de salida
 		File outFile = new File("datosSalida/19Acopia.jpg");
-		try (BufferedInputStream fis = new BufferedInputStream(inFile); FileOutputStream fos = new FileOutputStream(outFile);){
+		try (BufferedInputStream fis = new BufferedInputStream(new FileInputStream(inFile)); BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(outFile));){
 			int byteLeido;
 			int contadorBytes= 0;
 			long inicio = System.currentTimeMillis();

@@ -1,0 +1,1 @@
+Esta es una cadena 5 12,55 false

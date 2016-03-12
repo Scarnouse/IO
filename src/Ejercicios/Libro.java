@@ -7,16 +7,13 @@ public class Libro {
 	private String isbn;
 	//constructor
 	public Libro (String titulo, String autor, String isbn){
-		if (validarIsbn(isbn)){
 			this.titulo=titulo;
 			this.autor=autor;
 			this.isbn=isbn;
-		} else {
-			System.out.println("ISBN introducido no valido");
-		}
+		
 	}
 	
-	private boolean validarIsbn(String isbn){
+	/*private boolean validarIsbn(String isbn){
 		boolean validado = false;
 		int resultado = 0;
 		for(int i = 0; i < isbn.length()-1;i++){
@@ -26,7 +23,7 @@ public class Libro {
 		if(resultado%11==10 && isbn.charAt(isbn.length()-1)=='X') validado = true;
 		System.out.println(validado);
 		return validado;
-	}
+	}*/
 
 	@Override
 	public String toString() {

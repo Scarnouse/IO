@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 public class LibroReader {
 
@@ -13,15 +15,14 @@ public class LibroReader {
 			StringBuilder sb = new StringBuilder();
 			String[] array = new String[10];
 			List<Libro> coleccion = new ArrayList<Libro>();
-			Libro l = null;
 			while ((elemento=fr.read())!=-1){
 				sb.append((char)elemento);
+				//la pauta de la "," no vale.
 				array = sb.toString().split(",");
-				l = new Libro(array[0].toString(),array[3].toString(),array[6].toString().substring(5));
-				coleccion.add(l);
-				}
-			
-			
+				//Libro l = new Libro(array[0].toString(),array[3].toString(),array[6].toString());
+				//coleccion.add(l);					
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	

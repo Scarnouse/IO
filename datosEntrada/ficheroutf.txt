@@ -1,0 +1,4 @@
+Fichero en codificacion UTF-8
+Añado caracteres extraños
+Pájaro de mal agüero
+Ç ^ 

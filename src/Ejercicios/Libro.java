@@ -2,17 +2,19 @@ package Ejercicios;
 
 public class Libro {
 	//atributos
-	private String titulo;
-	private String autor;
 	private String isbn;
+	private String codigo;
+	private String titulo;
+	private String lanzamiento;
 	//constructor
-	public Libro (String titulo, String autor, String isbn){
+	public Libro (String isbn, String codigo, String titulo, String lanzamiento){
+			this.codigo=codigo;
 			this.titulo=titulo;
-			this.autor=autor;
 			this.isbn=isbn;
+			this.lanzamiento=lanzamiento;
 		
 	}
-	
+
 	/*private boolean validarIsbn(String isbn){
 		boolean validado = false;
 		int resultado = 0;
@@ -24,12 +26,12 @@ public class Libro {
 		System.out.println(validado);
 		return validado;
 	}*/
-
+	
 	@Override
 	public String toString() {
-		return "Libro [titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + "]";
+		return "Libro [isbn=" + isbn + ", codigo=" + codigo + ", titulo=" + titulo + ", lanzamiento=" + lanzamiento
+				+ "]";
 	}
-	
 	
 	/*
 	public static void main(String[] args) {

@@ -21,7 +21,6 @@ public class VeinteNumerosEnterosReaderWriter {
 				//Este al guardarlos como una cadena y no a nivel de bytes si muestra del 250 al 260
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

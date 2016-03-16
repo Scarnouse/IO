@@ -18,7 +18,7 @@ public class VeinteNumerosEnteros {
 			e.printStackTrace();
 		}
 		try (DataOutputStream douts = new DataOutputStream(new FileOutputStream("ejercicioDataOutputStream.txt"));){
-			for (int i = 20; i <=40; i++) {
+			for (int i = 250; i <=260; i++) {
 				douts.writeInt(i);
 				douts.flush();
 			}

@@ -1,6 +1,8 @@
 package Ejercicios;
 
-public class Libro {
+import java.io.Serializable;
+
+public class Libro implements Serializable {
 	//atributos
 	private String isbn;
 	private String codigo;
@@ -29,7 +31,7 @@ public class Libro {
 	
 	@Override
 	public String toString() {
-		return "Libro [isbn=" + isbn + ", codigo=" + codigo + ", titulo=" + titulo + ", lanzamiento=" + lanzamiento
+		return "\nLibro [isbn=" + isbn + ", codigo=" + codigo + ", titulo=" + titulo + ", lanzamiento=" + lanzamiento
 				+ "]";
 	}
 	

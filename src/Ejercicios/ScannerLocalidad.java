@@ -24,7 +24,7 @@ public class ScannerLocalidad {
 			}
 			ObjectOutputStream oouts = new ObjectOutputStream(new FileOutputStream(new File("nuevaGeografia.bin")));
 			oouts.writeObject(lista);
-			//System.out.println(l.localizar("PABELLON"));
+			System.out.println(l.localizar("PABELLON"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

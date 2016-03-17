@@ -1,3 +1,5 @@
+package Ejercicios;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,10 +19,10 @@ public class Sierra {
 					System.out.println("Segundo argumento no numérico");
 					System.exit(1);
 				}
-			
-			for (int i = 0; i < partes; i++) {
-				
-			}
+				for (int i = 0; i < partes; i++) {
+					FileOutputStream fouts = new FileOutputStream("sierra/parte"+i+".bin");
+
+				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e1) {

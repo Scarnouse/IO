@@ -9,32 +9,36 @@ import java.io.IOException;
 public class Sierra {
 
 	public static void main(String[] args) {
-		if (args.length==2){
-			File file = new File(args[0]);
-			long dimension = (int)file.length();
-			try (FileInputStream fins = new FileInputStream(file);) {
-				if (args[1].matches("[0-9]+")){
-					int partes = Integer.parseInt(args[1]);
-					long particion = dimension/Integer.parseInt(args[1]);
-					int contador = 0;
-					for (int i = 0; i < dimension; i++) {
-						FileOutputStream fouts = new FileOutputStream("sierra/archivo"+contador+".bin");
-						for (int j = 0; j < particion; j++) {
-							
-						}
-						contador++;
-					}					
+		File file = new File("geografia.csv");
+		File outFile1 = new File("sierra/trozo1");
+		File outFile2 = new File("sierra/trozo2");
+		File outFile3 = new File("sierra/trozo3");
+		long dimension = file.length();
+		long particion = dimension/3;
+		try (FileInputStream fins = new FileInputStream(file);
+				FileOutputStream fout1 = new FileOutputStream(outFile1);
+				FileOutputStream fout2 = new FileOutputStream(outFile2);
+				FileOutputStream fout3 = new FileOutputStream(outFile3)) {
+			int byteLeido;
+			while((byteLeido=fins.read())!=-1){
+				//System.out.print((char)byteLeido); //comprobando la lectura
+				int contador = 0;
+				if(contador<particion){
+					fout1.write(byteLeido);
+					fout1.flush();
+				} else if (contador>=particion && contador<=particion*2){
+					fout2.write(byteLeido);
+					fout2.flush();
 				} else {
-					System.out.println("Argumento no numerico");
+					fout3.write(byteLeido);
+					fout3.flush();
 				}
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e1) {
-				e1.printStackTrace();
+				contador++;
 			}
-		} else {
-			System.out.println("Número de argumentos inválido");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
-
 }
